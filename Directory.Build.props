@@ -1,0 +1,8 @@
+<Project>
+  <!-- Redirect ALL MSBuild intermediates/outputs for ANY project under this folder -->
+  <PropertyGroup>
+    <BaseIntermediateOutputPath>$(MSBuildThisFileDirectory)BuildObj\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
+    <IntermediateOutputPath>$(BaseIntermediateOutputPath)</IntermediateOutputPath>
+    <OutputPath>$(MSBuildThisFileDirectory)BuildBin\$(MSBuildProjectName)\</OutputPath>
+  </PropertyGroup>
+</Project>

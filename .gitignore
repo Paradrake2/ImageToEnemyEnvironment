@@ -1,0 +1,60 @@
+# === Unity Generated Files ===
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+
+# Crash Reports
+*.stacktrace
+
+# Cache
+sysinfo.txt
+*.pidb
+*.suo
+*.user
+*.userprefs
+*.unityproj
+*.booproj
+*.svd
+
+# Visual Studio / Rider
+.vscode/
+.idea/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Builds
+*.apk
+*.aab
+*.xcodeproj/
+*.xcworkspace/
+
+# === OS / Misc ===
+.DS_Store
+Thumbs.db
+
+# === OneDrive Temp Files ===
+FSTimeGet-*
+~$*
+*.tmp
+
+# === Custom ===
+Temp/
+Assets/**/bin/
+Assets/**/obj/
+Assets/**/*.csproj
