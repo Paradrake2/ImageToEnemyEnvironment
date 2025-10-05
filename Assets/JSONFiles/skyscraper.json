@@ -1,0 +1,13 @@
+{
+  "name": "Glass Spire Colossus",
+  "level": 14,
+  "stats": {
+    "hp": 700,
+    "attack": 30,
+    "defense": 120,
+    "speed": 1
+  },
+  "behaviors": [
+    "ranged"
+  ]
+}

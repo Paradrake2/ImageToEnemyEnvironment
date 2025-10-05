@@ -1,0 +1,13 @@
+{
+  "name": "Field Bull",
+  "level": 3,
+  "stats": {
+    "hp": 50,
+    "attack": 11,
+    "defense": 8,
+    "speed": 6
+  },
+  "behaviors": [
+    "melee"
+  ]
+}

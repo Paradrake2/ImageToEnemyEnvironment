@@ -2,7 +2,19 @@ using UnityEngine;
 
 public class EnemyStats : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public int Health;
+    public float Damage;
+    public float Defense;
+    public float Speed;
+    public float AttackRange = 0f;
+    public void InitializeStats(EnemyDefinition definition)
+    {
+        Health = definition.hp;
+        Damage = definition.attack;
+        Defense = definition.defense;
+        Speed = definition.speed;
+        AttackRange = definition.attackRange;
+    }
     void Start()
     {
         
