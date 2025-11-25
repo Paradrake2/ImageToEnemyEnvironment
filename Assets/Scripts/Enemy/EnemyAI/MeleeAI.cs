@@ -4,10 +4,14 @@ public class MeleeAI : EnemyAI
 {
     public Rigidbody2D rb;
     public EnemyStats stats;
+    public Collider2D attackCollider;
+    private float attackCooldown = 0.5f;
+    private float lastAttackTime = 0f;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         stats = GetComponent<EnemyStats>();
+        attackCollider = GetComponent<Enemy>().attackCollider;
     }
     public override void MovementBehaviour(GameObject player)
     {
@@ -18,15 +22,19 @@ public class MeleeAI : EnemyAI
     {
         base.AttackBehaviour();
     }
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (Time.time >= lastAttackTime + attackCooldown)
         {
-            // Implement attack logic here, e.g., reduce player health
-            Player player = collision.GetComponent<Player>();
-            if (player != null)
+            if (collision.CompareTag("Player"))
             {
-                player.TakeDamage(stats.Damage);
+                lastAttackTime = Time.time;
+                // Implement attack logic here, e.g., reduce player health
+                Player player = collision.GetComponent<Player>();
+                if (player != null)
+                {
+                    player.TakeDamage(stats.Damage);
+                }
             }
         }
     }

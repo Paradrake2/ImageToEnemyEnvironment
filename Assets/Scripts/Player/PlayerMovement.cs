@@ -3,22 +3,30 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public PlayerStats stats;
+    private Vector2 movement;
+    private Rigidbody2D rb;
+    public float deceleration = 10f;
+
     void Start()
     {
         stats = GetComponent<PlayerStats>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
 
-        Vector2 movement = new Vector2(horizontalInput, verticalInput).normalized;
-
-        if (movement.magnitude > 0)
+        Vector2 targetVelocity = movement.normalized * stats.speed;
+        if (movement == Vector2.zero)
         {
-            transform.Translate(movement * stats.speed * Time.deltaTime);
+            rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, Vector2.zero, deceleration * Time.fixedDeltaTime);
+        }
+        else
+        {
+            rb.linearVelocity = targetVelocity;
         }
     }
 }

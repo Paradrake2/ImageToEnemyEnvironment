@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
         if (stats != null)
         {
             stats.currentHealth -= damage;
+            PlayerUI.instance.UpdateHealth();
             if (stats.currentHealth <= 0)
             {
                 Die();
@@ -24,6 +25,7 @@ public class Player : MonoBehaviour
     public void Die()
     {
         Debug.Log("Player has died.");
+        Destroy(this.gameObject);
         // Implement respawn or game over logic here
     }
     void Update()

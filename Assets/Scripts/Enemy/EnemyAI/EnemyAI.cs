@@ -9,14 +9,14 @@ public class EnemyAI : MonoBehaviour
     public GameObject player;
     void Start()
     {
-        player = FindFirstObjectByType<Player>().gameObject;
+        //player = FindFirstObjectByType<Player>().gameObject;
     }
     public void DetectPlayer()
     {
-        GameObject findPlayer = FindFirstObjectByType<Player>().gameObject;
-        if (findPlayer != null)
+        //GameObject findPlayer = FindFirstObjectByType<Player>().gameObject;
+        if (player != null)
         {
-            float distance = Vector3.Distance(transform.position, findPlayer.transform.position);
+            float distance = Vector3.Distance(transform.position, player.transform.position);
             if (distance <= detectionRange)
             {
                 playerInRange = true;
